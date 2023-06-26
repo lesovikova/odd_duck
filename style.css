@@ -5,6 +5,12 @@
     letter-spacing: 0.4px;
 }
 
+@font-face {
+    font-family: 'Belanosima', sans-serif;
+    src: local("Belanosima"),
+      url("assets/fonts/Belanosima-Regular.ttf") format("truetype") local("Belanosima bold") url("assets/fonts/Belanosima-Bold.ttf") format("truetype") ;
+  }
+
 body {
     display: grid;
     min-height: 100vh;
@@ -12,6 +18,7 @@ body {
     grid-template-rows: auto 1fr auto;
     align-items: stretch;
     color: #634100;
+    font-family: 'Belanosima', sans-serif;
 }
 
 img {
