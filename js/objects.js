@@ -1,4 +1,4 @@
-const imgPath = "../assets/img/";
+const imgPath = "../../assets/img/";
 const rounds = 5;
 let count = 0;
 
