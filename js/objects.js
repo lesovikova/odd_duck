@@ -4,7 +4,9 @@ const rounds = 5;
 
 const allProducts = [];
 
-const imagesOnScreen = randomNumber(allProducts.length);
+
+
+// const imagesOnScreen = randomNumberForDisplay(allProducts.length);
 
 function Product(name) {
     this.name = name;
