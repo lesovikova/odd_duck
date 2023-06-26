@@ -65,6 +65,8 @@ function displayButton() {
     container.insertAdjacentElement("beforebegin", button);
 }
 
+
+//handling the click to the button of results
 function displayResults(arr) {
     const div = document.createElement('div');
     button.insertAdjacentElement("afterend", div);
@@ -76,8 +78,9 @@ function displayResults(arr) {
         p.textContent = `The ${item.name} image has been displayed ${item.views} times. It was clicked ${item.clicks} times. The ratio is ${Math.round(item.getPercents()*100)/100} percents.`;
     })
 
-
+    button.style.display = "none";
 }
+
 
 function sortObjects(arr) {
     arr.sort((a, b) => b.getPercents() - a.getPercents());

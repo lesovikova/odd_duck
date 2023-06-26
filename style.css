@@ -61,7 +61,14 @@ img {
 }
 
 .results {
-    
+    max-width: 992px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.results p {
+    font-size: 1.1rem;
+    line-height: 1.7;
 }
 
 .container {

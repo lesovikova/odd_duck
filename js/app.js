@@ -8,8 +8,5 @@ container.addEventListener("click", clickHandler);
 console.log(count);
 
 
-button.addEventListener("click", () => {
-    console.log("somtheing");
-    displayResults(allProducts);
-})
+button.addEventListener("click", () => displayResults(allProducts));
 
