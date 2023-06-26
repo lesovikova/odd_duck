@@ -43,6 +43,27 @@ img {
     min-height: 400px;
 }
 
+.main button {
+    display: block;
+    background-color: #4C6293;
+    color: white;
+    padding: 20px 40px;
+    font-weight: 600;
+    margin: 20px auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 1px #4C6293;
+}
+
+.main button:hover {
+    cursor: pointer;
+    box-shadow: inset 1px 1px 5px 1px #a4afc78f;
+}
+
+.results {
+    
+}
+
 .container {
     max-width: 992px;
     background-color: #E4F0FF;
@@ -63,6 +84,13 @@ img {
 
 .container img:hover {
     border: 3px #634100 solid;
+    /* z-index: 3;
+    min-width: 400px;
+    height: auto;
+    max-height: 450px;
+    position: absolute;
+    top: -10%;
+    left: -200px; */
 }
 
 .footer {

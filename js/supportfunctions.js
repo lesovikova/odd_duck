@@ -1,15 +1,16 @@
 
-//function for 
+//function for generating number less than the amount of objects we have, but no less than 3
 function randomNumberForDisplay(max){
     return Math.floor(Math.random() * (max - 3) + 3);
 }
 
-
+//function for a random number
 function randomNumber(max){
     return Math.floor(Math.random() * max);
 }
 
 
+//function creates a new Set, and adds random numbers to it till it's length is equal to the number of objects that needs to be displayed
 function unicGenerator(arr) {   
     const newArr = new Set(); 
     const random = randomNumberForDisplay(arr.length);
@@ -19,12 +20,65 @@ function unicGenerator(arr) {
     return newArr;
 }
 
+
+//function that takes the Set with the numbers and goes through our array of objects and displays them on the page
 function postImage(set, arr) {
-    const container = document.querySelector('.container');
     set.forEach((item) => {
-        console.log(item);
+        const imageContainer = document.createElement("div");
         const image = document.createElement('img');
         image.setAttribute('src', `${arr[item].src}`);
-        container.append(image);
+        image.setAttribute('name', `${arr[item].name}`);
+        addView(arr[item]);
+        container.append(imageContainer);
+        // imageContainer.style.position = "relative";
+        imageContainer.append(image);
     });    
+}
+
+
+//function for adding the view count in the objects that are displayed
+function addView(item) {
+    item.views += 1; 
+}
+
+
+//function that on click displays new images and increases the count on the clicked images, if the number of clicks reached the set amount the function is over
+function clickHandler(e){
+    if(e.target.tagName === "IMG") {
+        count++;
+        const itemIndex = allProducts.findIndex((item) => item.name === e.target.name);
+        allProducts[itemIndex].clicks++;
+        container.innerHTML = "";
+        postImage(unicGenerator(allProducts), allProducts);
+        console.log(count);
+        if (count >= rounds) {
+            container.removeEventListener("click", clickHandler);
+            displayButton();
+        } 
+    }
+}
+
+
+//adds the button to the top of the container
+function displayButton() {
+    button.textContent = "View results";
+    container.insertAdjacentElement("beforebegin", button);
+}
+
+function displayResults(arr) {
+    const div = document.createElement('div');
+    button.insertAdjacentElement("afterend", div);
+    div.classList.add('results');
+    sortObjects(arr);
+    arr.forEach((item) => {        
+        const p = document.createElement('p');
+        div.append(p);
+        p.textContent = `The ${item.name} image has been displayed ${item.views} times. It was clicked ${item.clicks} times. The ratio is ${Math.round(item.getPercents()*100)/100} percents.`;
+    })
+
+
+}
+
+function sortObjects(arr) {
+    arr.sort((a, b) => b.getPercents() - a.getPercents());
 }

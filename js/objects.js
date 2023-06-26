@@ -1,46 +1,49 @@
 const imgPath = "../assets/img/";
-const rounds = 5;
+const rounds = 25;
+let count = 0;
 
 
 const allProducts = [];
+const container = document.querySelector('.container');
+const button = document.createElement('button');
 
 
 
 // const imagesOnScreen = randomNumberForDisplay(allProducts.length);
 
-function Product(name) {
+function Product(name, fileName) {
     this.name = name;
     this.views = 0;
     this.clicks = 0;
-    this.src = `${imgPath}${this.name}`;
+    this.src = `${imgPath}${fileName}`;
     this.push();
 }
 
-Product.prototype.getPercents = function(views, clicks) {
-    return clicks/views*100;
+Product.prototype.getPercents = function() {
+    return this.clicks/this.views*100;
 }
 
 Product.prototype.push = function() {
     allProducts.push(this);
 }
 
-const bag = new Product("bag.jpg");
-const banana = new Product("banana.jpg");
-const bathroom = new Product("bathroom.jpg");
-const boots = new Product("boots.jpg");
-const breakfast = new Product("breakfast.jpg");
-const bubblegum = new Product("bubblegum.jpg");
-const chair = new Product("chair.jpg");
-const cthulhu = new Product("cthulhu.jpg");
-const dogDuck = new Product("dog-duck.jpg");
-const dragon = new Product("dragon.jpg");
-const pen = new Product("pen.jpg");
-const petSweep = new Product("pet-sweep.jpg");
-const scissors = new Product("scissors.jpg");
-const shark = new Product("shark.jpg");
-const sweep = new Product("sweep.png");
-const tauntaun = new Product("tauntaun.jpg");
-const unicorn = new Product("unicorn.jpg");
-const waterCan = new Product("water-can.jpg");
-const wineGlass = new Product("wine-glass.jpg");
+const bag = new Product("bag", "bag.jpg");
+const banana = new Product("banana", "banana.jpg");
+const bathroom = new Product("bathroom", "bathroom.jpg");
+const boots = new Product("boots", "boots.jpg");
+const breakfast = new Product("breakfast", "breakfast.jpg");
+const bubblegum = new Product("bubblegum", "bubblegum.jpg");
+const chair = new Product("chair", "chair.jpg");
+const cthulhu = new Product("cthulhu", "cthulhu.jpg");
+const dogDuck = new Product("dog-duck", "dog-duck.jpg");
+const dragon = new Product("dragon", "dragon.jpg");
+const pen = new Product("pen", "pen.jpg");
+const petSweep = new Product("pet-sweep", "pet-sweep.jpg");
+const scissors = new Product("scissors", "scissors.jpg");
+const shark = new Product("shark", "shark.jpg");
+const sweep = new Product("sweep", "sweep.png");
+const tauntaun = new Product("tauntaun", "tauntaun.jpg");
+const unicorn = new Product("unicorn", "unicorn.jpg");
+const waterCan = new Product("water-can", "water-can.jpg");
+const wineGlass = new Product("wine-glass", "wine-glass.jpg");
 
