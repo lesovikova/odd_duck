@@ -1,5 +1,5 @@
 const imgPath = "assets/img/";
-const rounds = 25;
+const rounds = 5;
 let count = 0;
 
 
@@ -9,7 +9,7 @@ const button = document.createElement('button');
 
 
 //array that will take the images for compare to the new set
-let previousSet = [1, 3, 6];
+let previousSet = [];
 
 
 // const imagesOnScreen = randomNumberForDisplay(allProducts.length);

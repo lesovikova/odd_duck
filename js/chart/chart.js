@@ -1,21 +1,26 @@
 
 function myChart(){
-  const directory = document.getElementById('myChart');
-  // createData();
-  const names = [];
-for(let i = 0; i < allProducts.length; i++) {
-    names.push(allProducts[i].name);
-}
+  const directory = document.getElementById('myChart1');
+  const directory2 = document.getElementById('myChart2');
+    const names = [];
+    for(let i = 0; i < allProducts.length; i++) {
+        names.push(allProducts[i].name);
+    }
 
-const views = [];
-for(let i = 0; i < allProducts.length; i++) {
-    views.push(allProducts[i].views);
-}
+    const views = [];
+    for(let i = 0; i < allProducts.length; i++) {
+        views.push(allProducts[i].views);
+    }
 
-const clicks = [];
-for(let i = 0; i < allProducts.length; i++) {
-    clicks.push(allProducts[i].clicks);
-}
+    const clicks = [];
+    for(let i = 0; i < allProducts.length; i++) {
+        clicks.push(allProducts[i].clicks);
+    }
+    
+    const percents = [];
+    for(let i = 0; i < allProducts.length; i++) {
+        percents.push(Math.round(allProducts[i].getPercents()*100)/100);
+    }
 
   const data = {
       labels: names,
@@ -32,11 +37,53 @@ for(let i = 0; i < allProducts.length; i++) {
       },
     ]}
 
-  const config = {
+    const data2 = {
+      labels: names,
+      datasets: [
+      {
+        label: 'Percents',
+        data: percents,
+        borderWidth: 1,
+        backgroundColor: ["#63410091"],
+        borderColor: ["#634100"],
+      },
+    ],
+  }
+    
+  const config1 = {
     type: "bar",
     data: data,
   };
 
-  const myChart = new Chart(directory, config);
+  const config2 = {
+    type: "bar",
+    data: data2,
+  };
+
+  const viewsAndClicks = new Chart(directory, config1);  
+  const percentsChart = new Chart(directory2, config2);
   button.style.display = "none";
 }
+
+
+// function myChart2(){
+//   const directory = document.getElementById('myChart2');
+//     const names = [];
+//     for(let i = 0; i < allProducts.length; i++) {
+//         names.push(allProducts[i].name);
+//     }
+
+//     const percents = [];
+//     for(let i = 0; i < allProducts.length; i++) {
+//         percents.push(Math.round(allProducts[i].getPercents()*100)/100);
+//     }
+
+    
+
+//     const config = {
+//       type: "bar",
+//       data: data,
+//     };
+
+//     const percentsChart = new Chart(directory, config);
+// }

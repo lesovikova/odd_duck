@@ -8,5 +8,7 @@ container.addEventListener("click", clickHandler);
 
 
 // button.addEventListener("click", () => displayResults(allProducts));
-button.addEventListener("click", () => myChart());
+button.addEventListener("click", () => {
+    myChart();
+});
 

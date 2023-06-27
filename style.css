@@ -113,3 +113,8 @@ img {
     text-align: center;
     padding: 30px;
 }
+
+div:has(canvas){
+    max-width: 992px;
+    margin: 20px auto;
+}
