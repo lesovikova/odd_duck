@@ -13,22 +13,34 @@ function randomNumber(max){
 }
 
 
-function cleanPrevious(arr) {
-
-}
-
-
 //function creates a new Set, and adds random numbers to it till it's length is equal to the number of objects that needs to be displayed
+//with the changes to the lab, added the function of clearing the Set from previous choices and replacing the previous choices array with new choices
+// function unicGenerator(arr) {   
+//     const newArr = new Set(); 
+//     const random = randomNumberForDisplay(arr.length);
+//     do {
+//         newArr.add(randomNumber(arr.length));
+//         for(let i = 0; i < previousSet.length; i++){
+//             newArr.delete(previousSet[i]);
+//         }
+//     } while (newArr.size !== random);
+
+//     previousSet = [...newArr];
+//     return newArr;
+// }
+
+//other version of the same function
 function unicGenerator(arr) {   
     const newArr = new Set(); 
     const random = randomNumberForDisplay(arr.length);
     do {
         newArr.add(randomNumber(arr.length));
         for(let i = 0; i < previousSet.length; i++){
-            newArr.delete(previousSet[i]);
+            if (newArr.has(previousSet[i])){
+                newArr.delete(previousSet[i]);
+            }
         }
     } while (newArr.size !== random);
-
     previousSet = [...newArr];
     return newArr;
 }

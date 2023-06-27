@@ -9,7 +9,7 @@ const button = document.createElement('button');
 
 
 //array that will take the images for compare to the new set
-let previousSet = [];
+let previousSet = [1, 3, 6];
 
 
 // const imagesOnScreen = randomNumberForDisplay(allProducts.length);
