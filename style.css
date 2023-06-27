@@ -116,5 +116,10 @@ img {
 
 div:has(canvas){
     max-width: 992px;
-    margin: 20px auto;
+    margin: 0 auto;
+    min-height: 0;
+}
+
+canvas {
+    height: 0;
 }
