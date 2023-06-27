@@ -8,6 +8,9 @@ const container = document.querySelector('.container');
 const button = document.createElement('button');
 
 
+//array that will take the images for compare to the new set
+let previousSet = [];
+
 
 // const imagesOnScreen = randomNumberForDisplay(allProducts.length);
 

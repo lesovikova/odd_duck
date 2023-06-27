@@ -1,12 +1,20 @@
 
 //function for generating number less than the amount of objects we have, but no less than 3
+
+//As the conditions of the lab changed to check that the previous set isn't the same as current, the amount of images should be decreased, I take the max images and dived it by 3
 function randomNumberForDisplay(max){
-    return Math.floor(Math.random() * (max - 3) + 3);
+    return Math.floor(Math.random() * (max/3 - 3) + 3);
 }
+
 
 //function for a random number
 function randomNumber(max){
     return Math.floor(Math.random() * max);
+}
+
+
+function cleanPrevious(arr) {
+
 }
 
 
@@ -16,7 +24,12 @@ function unicGenerator(arr) {
     const random = randomNumberForDisplay(arr.length);
     do {
         newArr.add(randomNumber(arr.length));
+        for(let i = 0; i < previousSet.length; i++){
+            newArr.delete(previousSet[i]);
+        }
     } while (newArr.size !== random);
+
+    previousSet = [...newArr];
     return newArr;
 }
 
@@ -50,7 +63,6 @@ function clickHandler(e){
         allProducts[itemIndex].clicks++;
         container.innerHTML = "";
         postImage(unicGenerator(allProducts), allProducts);
-        console.log(count);
         if (count >= rounds) {
             container.removeEventListener("click", clickHandler);
             displayButton();
