@@ -13,10 +13,6 @@ const button = document.createElement('button');
 let previousSet = [];
 
 
-//the object for localStorage
-// const storageProducts = allProducts;
-
-
 // const imagesOnScreen = randomNumberForDisplay(allProducts.length);
 
 function Product(name, fileName) {
@@ -30,6 +26,7 @@ function Product(name, fileName) {
 // Product.prototype.getPercents = function() {
 //     return this.clicks/this.views*100;
 // }
+
 
 Product.prototype.push = function() {
     allProducts.push(this);
