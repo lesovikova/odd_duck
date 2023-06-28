@@ -17,7 +17,7 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
     align-items: stretch;
-    color: #634100;
+    color: #00286E;
     font-family: 'Belanosima', sans-serif;
 }
 
@@ -30,19 +30,25 @@ img {
 .header {
     background-color: cornflowerblue;
     padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
 }
 
 .header h1 {
     font-size: 2.5rem;
-    color: wheat;
+    color: inherit;
     margin: 2rem;
 }
 
 .header h2 {
     font-size: 1.5rem;
-    color: white;
+    color: inherit;
     margin: 1.3rem;
+}
+
+h3 {
+    background-color: inherit;
+    color: inherit;
 }
 
 .main {
@@ -80,7 +86,6 @@ img {
 
 .container {
     max-width: 992px;
-    background-color: #E4F0FF;
     display: grid;    
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0 auto;
@@ -123,3 +128,72 @@ div:has(canvas){
 canvas {
     height: 0;
 }
+
+/* Theme changer */
+.theme-changer__clicker {
+    width: 100px; 
+    height: 100px;
+    background: cornflowerblue;
+    border-color: #00286E;
+    border-style: solid;
+    border-width: 2px 2px 50px 2px;
+    border-radius: 50%;
+    position: relative;
+    
+    transition: transform 1s ease-in-out;
+    }
+.theme-changer__clicker:before, 
+.theme-changer__clicker:after {
+    content: "";
+    width: 12px; 
+    height: 12px;
+    position: absolute; 
+    top: 50%;
+    border-radius: 50%;
+    }
+.theme-changer__clicker:before {
+    left: 0;
+    background: #00286E;
+    border: 19px solid #00286E;
+    }
+.theme-changer__clicker:after {
+    left: 49%;
+    background: cornflowerblue;
+    border: 19px solid cornflowerblue;
+    }
+
+    .theme-changer:hover, .theme-changer__clicker:hover {
+        cursor: pointer;
+    }
+
+    .theme-changer__clicker:hover {
+        transform: rotate(45deg);
+    }
+
+    header.lighttheme {
+        color: #00286E;
+        background-color: cornflowerblue;
+    }
+
+    main.lighttheme  {
+        background-color: cornflowerblue;
+    }
+
+    footer.lighttheme {
+        background-color: #4C6293;
+        color: wheat;
+    }
+
+    header.darktheme {
+        color: #A6ABBD;
+        background-color: #414656;        
+    }
+
+    main.darktheme {
+        background-color: #A6ABBD;
+    }
+
+    footer.darktheme {
+        background-color: #AD3956;
+        color: #A6ABBD;
+    }
