@@ -66,6 +66,9 @@ function addView(item) {
     item.views += 1; 
 }
 
+const getPercents = function(i) {
+    return i.clicks/i.views*100;
+}
 
 //function that on click displays new images and increases the count on the clicked images, if the number of clicks reached the set amount the function is over
 function clickHandler(e){
@@ -81,6 +84,7 @@ function clickHandler(e){
         } 
     }
 }
+
 
 
 //adds the button to the top of the container

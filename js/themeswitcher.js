@@ -3,10 +3,6 @@ let theme = "";
 const header = document.querySelector('header').classList;
 const main = document.querySelector('main').classList;
 const footer = document.querySelector('footer').classList;
-console.log(header.contains("darktheme"));
-
-
-console.log(theme);
 
 document.querySelector('.theme-changer__clicker').addEventListener('click', changeThemes);
 
@@ -64,4 +60,4 @@ function loadFromLocal() {
     }
 }
 
-loadFromLocal();
+

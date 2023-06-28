@@ -3,13 +3,18 @@ const rounds = 5;
 let count = 0;
 
 
-const allProducts = [];
+
+let allProducts = [];
 const container = document.querySelector('.container');
 const button = document.createElement('button');
 
 
 //array that will take the images for compare to the new set
 let previousSet = [];
+
+
+//the object for localStorage
+// const storageProducts = allProducts;
 
 
 // const imagesOnScreen = randomNumberForDisplay(allProducts.length);
@@ -22,9 +27,9 @@ function Product(name, fileName) {
     this.push();
 }
 
-Product.prototype.getPercents = function() {
-    return this.clicks/this.views*100;
-}
+// Product.prototype.getPercents = function() {
+//     return this.clicks/this.views*100;
+// }
 
 Product.prototype.push = function() {
     allProducts.push(this);

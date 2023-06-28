@@ -1,3 +1,12 @@
+let percents = [];
+function getDamnPercents(){
+  for(let i = 0; i < allProducts.length; i++) {
+    const res = getPercents(allProducts[i]);
+    percents.push(res);
+  }
+}
+
+
 
 function myChart(){
   const directory = document.getElementById('myChart1');
@@ -17,10 +26,7 @@ function myChart(){
         clicks.push(allProducts[i].clicks);
     }
     
-    const percents = [];
-    for(let i = 0; i < allProducts.length; i++) {
-        percents.push(Math.round(allProducts[i].getPercents()*100)/100);
-    }
+   getDamnPercents();
 
   const data = {
       labels: names,
